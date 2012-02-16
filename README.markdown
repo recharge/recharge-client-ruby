@@ -8,113 +8,32 @@
 
 ## Installation
 
-Recurly is packaged as a Ruby gem. We recommend you install it with
+Recharge is packaged as a Ruby gem. We recommend you install it with
 [Bundler](http://gembundler.com/) by adding the following line to your Gemfile:
 
 ``` ruby
-gem 'recurly', '~> 2.0.11'
+gem 'Recharge', '~> 1.0.2'
 ```
-
-Recurly will automatically use [Nokogiri](http://nokogiri.org/) (for a nice
-speed boost) if it's available and loaded in your app's environment.
-
 
 ## Configuration
 
-If you're using Rails, you can generate an initializer with the following
-command:
-
-``` bash
-$ rails g recurly:config
-```
-
-If you're not using Rails, use the following template:
+Simply set your API private key (found in your Recharge API Settings) like this:
 
 ``` ruby
-Recurly.api_key        = ENV['RECURLY_API_KEY']
-Recurly.js.private_key = ENV['RECURLY_JS_PRIVATE_KEY']
+Recharge.api_key =        = "abc123"
 ```
-
-Configure the client library with the credentials you find at
-`https://{subdomain}.recurly.com/developer/api_access` (replace `{subdomain}`
-with your Recurly subdomain).
-
-The default currency is USD. To override with a different code:
-
-``` ruby
-Recurly.default_currency = 'EUR' # Assign nil to disable the default entirely.
-```
-
-The client library currently uses a Net::HTTP adapter. If you need to
-configure the settings passed to Net::HTTP (e.g., an SSL certificates path),
-make sure you assign them before you make any requests:
-
-``` ruby
-Recurly::API.net_http = {
-  :ca_path => "/etc/ssl/certs"
-}
-```
-
 
 ## Usage
 
 Instructions and examples are available on
-[Recurly's documentation site](http://docs.recurly.com/api/basics).
-
-Recurly's gem API is available
-[here](http://rubydoc.info/gems/recurly/2.0.10/frames).
-
-
-## Contributing
-
-Developing for the Recurly gem is easy with [Bundler](http://gembundler.com/).
-
-Fork and clone the repository, `cd` into the directory, and, with a Ruby of
-your choice (1.8.7 is supported, but we suggest 1.9.2 or greater), set up your
-environment.
-
-If you don't have Bundler installed, install it with the following command:
-
-``` bash
-$ [sudo] gem install bundler
-```
-
-And bundle:
-
-``` bash
-$ bundle --path=vendor/bundle
-```
-
-You should now be able to run the test suite with Rake:
-
-``` bash
-$ bundle exec rake
-```
-
-To run the suite using Nokogiri:
-
-``` bash
-$ XML=nokogiri bundle exec rake
-```
-
-Or, if [Guard](https://github.com/guard/guard) is more your speed:
-
-``` bash
-$ bundle exec guard
-```
-
-If you plan on submitting a patch, please write tests for it (we use
-[MiniTest::Spec](http://bfts.rubyforge.org/minitest/MiniTest/Expectations.html)).
-
-If everything looks good, submit a pull request on GitHub and we'll bring in
-your changes.
+[Recharge's documentation site](https://rechargebilling.com/api).
 
 
 ## License
 
 (The MIT License.)
 
-© 2011 Recurly Inc.
+© 2012 Recharge LLC.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
