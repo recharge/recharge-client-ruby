@@ -20,7 +20,7 @@ gem 'Recharge', '~> 1.0.2'
 Simply set your API private key (found in your Recharge API Settings) like this:
 
 ``` ruby
-Recharge.api_key =        = "abc123"
+Recharge.api_key =        = "92ec4e4d8b623de9baaaf1576b7c557dd113e3f8"
 ```
 
 ## Usage
