@@ -28,6 +28,8 @@ Recharge.api_key = "92ec4e4d8b623de9baaaf1576b7c557dd113e3f8"
 Instructions and examples are available on
 [Recharge's documentation site](https://rechargebilling.com/api).
 
+Full working examples are also included in the examples/ directory.
+
 
 ## License
 
