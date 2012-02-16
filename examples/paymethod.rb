@@ -1,5 +1,5 @@
 # Examples for the Recharge API Gem
-# Payment Method Resource
+# Payment Method Resource 
 
 # Only 2 lines are required to get started:
 # Require the recharge.rb file
