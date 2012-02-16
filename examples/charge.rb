@@ -11,11 +11,6 @@ Recharge.api_key = "92ec3e4d8b623dd9baaaf1575b7c557cd113e3e8"
 
 
 
-
-
-
-
-
 # Find an individual charge by the charge ID
 puts "", "Find Individual Charge"
 
@@ -34,11 +29,6 @@ rescue Exception => e
   # be raised.
   puts ">> error #{e.message}"
 end
-
-
-
-
-
 
 
 
@@ -64,17 +54,11 @@ end
 
 
 
-
-
-
-
-
-
 # Update an existing charge (change billing amount, card number, etc)
 puts "", "Update Charge"
 
 begin
-  # you must find the charge id first
+  # you must find the charge first
   charge = Recharge::Charge.find(chargeID)
   # then call update on it
   # you only need to pass the attributes you want to update
@@ -89,13 +73,6 @@ rescue Exception => e
   # Response::BadRequest if there was something wrong with the request
   puts ">> error #{e.message}"
 end
-
-
-
-
-
-
-
 
 
 

@@ -11,11 +11,6 @@ Recharge.api_key = "92ec3e4d8b623dd9baaaf1575b7c557cd113e3e8"
 
 
 
-
-
-
-
-
 # Get a list of all active customers
 puts "Find All Customers",''
 
@@ -51,16 +46,6 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Find an individual customer by the customer ID
 puts "", "Find Individual Customers"
 
@@ -86,13 +71,6 @@ end
 
 
 
-
-
-
-
-
-
-
 # create a new customer
 puts "", "Create New Customer"
 
@@ -113,21 +91,11 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Update an existing customer (change email address, phone number, etc)
 puts "", "Update Customer"
 
 begin
-  # you must find the charge id first
+  # you must find the charge first
   customer = Recharge::Customer.find(customerID)
   
   # then call update on it
@@ -136,21 +104,14 @@ begin
     :refID=> Time.now.to_i
   )
   
-  # all updated information about the charge is now available
+  # all updated information about the customer is now available
   p customer
 rescue Exception => e
+  # errors here can be
+  # Response::NotFound if the customer ID does not exist
+  # Response::BadRequest if there was something wrong with the request
   puts ">> error #{e.message}"
 end
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,7 +120,9 @@ end
 puts "", "Delete Customer"
 
 begin
+  # find the customer first
   customer = Recharge::Customer.find(customerID)
+  # call destroy on it to delete it
   customer.destroy
 rescue Exception => e
   puts ">> error #{e.message}"
