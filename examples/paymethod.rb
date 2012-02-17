@@ -2,8 +2,9 @@
 # Payment Method Resource 
 
 # Only 2 lines are required to get started:
-# Require the recharge.rb file
-require '../lib/recharge'
+# Require the recharge gem
+require 'rubygems'
+require 'recharge'
 
 # Set your API key here, found in Recharge Settings > API Settings > API Private Key
 # If incorrect or blank, any calls will raise a Response::NotAuthorized
