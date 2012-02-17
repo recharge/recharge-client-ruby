@@ -1,6 +1,4 @@
 module Recharge
-  require File.dirname(__FILE__) + '/happymapper'
-  
   require File.dirname(__FILE__) + '/recharge/base'
   require File.dirname(__FILE__) + '/recharge/paymethod'
   require File.dirname(__FILE__) + '/recharge/charge'
