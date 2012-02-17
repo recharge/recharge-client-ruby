@@ -15,6 +15,8 @@ Recharge.api_key = "92ec3e4d8b623dd9baaaf1575b7c557cd113e3e8"
 # Get a list of all products
 puts "Find All Products",''
 
+productID = ""
+
 begin
   # call find_all to get a list of all products
   Recharge::Product.find_all.each do |product|
