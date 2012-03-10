@@ -8,7 +8,7 @@ require 'recharge'
 
 # Set your API key here, found in Recharge Settings > API Settings > API Private Key
 # If incorrect or blank, any calls will raise a Response::NotAuthorized
-Recharge.api_key = "92ec3e4d8b623dd9baaaf1575b7c557cd113e3e8"
+Recharge.api_key = "14a1a867f39b4fdced2148871e4e542015cad979"
 
 
 

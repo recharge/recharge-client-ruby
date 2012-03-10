@@ -1,19 +1,19 @@
 module Recharge
   class Base
     class << self
-      def get(uri)
+      def get(uri, apiKey=nil)
         client = Client.new()
-        return client.request('GET', uri)
+        return client.request('GET', uri, nil, apiKey)
       end
       
-      def post(uri, data=nil)
+      def post(uri, data=nil, apiKey=nil)
         client = Client.new()
-        return client.request('POST', uri, data)
+        return client.request('POST', uri, data, apiKey)
       end
       
-      def delete(uri)
+      def delete(uri, apiKey=nil)
         client = Client.new()
-        return client.request('DELETE', uri)
+        return client.request('DELETE', uri, nil, apiKey)
       end
       
       def returnImportantXML(data)

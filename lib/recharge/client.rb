@@ -1,11 +1,14 @@
 class Client
   
+  class NotAuthorized < StandardError
+  end  
+  
   def baseURL
     "https://www.rechargebilling.com/API/v2/"
   end
   
-  def request(method, uri, data=nil)
-    response = sendRequest(method, uri, data)
+  def request(method, uri, data=nil, apiKey=nil)
+    response = sendRequest(method, uri, data, apiKey)
     response.assertValidResponse
     if response.code.to_i == 200
       if method != "DELETE"
@@ -19,13 +22,19 @@ class Client
     
   end
   
-  def sendRequest(method, uri, data=nil)
+  def sendRequest(method, uri, data=nil, apiKey=nil)
     require "net/https"
     require "uri"
     
     if !Recharge.api_key
-      puts "no api key"
-      return
+      if !apiKey
+        raise NotAuthorized, "No API Key"
+        return
+      end
+    else
+      if !apiKey
+        apiKey = Recharge.api_key
+      end
     end
     
     uri = baseURL+uri
@@ -44,7 +53,7 @@ class Client
       request = Net::HTTP::Delete.new(uri.request_uri)
     end
     
-    request.basic_auth(Recharge.api_key, "")
+    request.basic_auth(apiKey, "")
     
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true

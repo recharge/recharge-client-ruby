@@ -14,24 +14,24 @@ module Recharge
     def initialize(id='')
       @id = id
     end
-    def self.find_all
-      responseXML = Recharge::Base.get('products')
+    def self.find_all (apiKey=nil)
+      responseXML = Recharge::Base.get('products', apiKey)
       parse(responseXML.to_s)
     end
-    def self.find (id)
-      responseXML = Recharge::Base.get('products/'+id)
+    def self.find (id, apiKey=nil)
+      responseXML = Recharge::Base.get('products/'+id, apiKey)
       parse(responseXML.to_s)
     end
-    def self.create (attributes = {})
-      responseXML = Recharge::Base.post('products', attributes)
+    def self.create (attributes = {}, apiKey=nil)
+      responseXML = Recharge::Base.post('products', attributes, apiKey)
       parse(responseXML.to_s)
     end
-    def update (attributes = {})
-      responseXML = Recharge::Base.post('products/'+self.id, attributes)
+    def update (attributes = {}, apiKey=nil)
+      responseXML = Recharge::Base.post('products/'+self.id, attributes, apiKey)
       Product.parse(responseXML.to_s)
     end
-    def destroy (attributes = {})
-      responseXML = Recharge::Base.delete('products/'+self.id)
+    def destroy (apiKey=nil)
+      responseXML = Recharge::Base.delete('products/'+self.id, apiKey)
     end
   end
 end

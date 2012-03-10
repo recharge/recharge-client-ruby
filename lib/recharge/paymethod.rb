@@ -12,12 +12,12 @@ module Recharge
     element :nameOnCard, String
     element :error, String
   
-    def self.create (attributes = {})
-      responseXML = Recharge::Base.post('paymethods', attributes)
+    def self.create (attributes = {}, apiKey=nil)
+      responseXML = Recharge::Base.post('paymethods', attributes, apiKey)
       parse(responseXML.to_s)
     end
-    def self.destroy (id)
-      responseXML = Recharge::Base.delete('paymethods/'+id)
+    def self.destroy (id, apiKey=nil)
+      responseXML = Recharge::Base.delete('paymethods/'+id, apiKey)
     end
   end
 end

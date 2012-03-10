@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'Recharge'
-  s.version     = '1.1.3'
+  s.version     = '1.1.4'
   s.date        = '2012-02-17'
   s.summary     = "Recharge API Client"
   s.description = "An API client library for Recharge http://rechargebilling.com"
