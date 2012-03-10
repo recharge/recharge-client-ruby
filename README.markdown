@@ -12,7 +12,7 @@ Recharge is packaged as a Ruby gem. We recommend you install it with
 [Bundler](http://gembundler.com/) by adding the following line to your Gemfile:
 
 ``` ruby
-gem 'Recharge', '~> 1.1.4'
+gem 'Recharge', '~> 1.1.5'
 ```
 
 ## Configuration
